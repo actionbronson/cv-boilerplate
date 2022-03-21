@@ -105,15 +105,6 @@ $if(intro)$
 $intro$
 $endif$
 
-\subsection*{Areas of Interest}
-$if(skills)$
-\begin{itemize}
-    $for(skills)$
-      \item $skills$
-    $endfor$
-\end{itemize}
-$endif$
-
 % \vfill
 
 \vspace{25pt}
@@ -121,18 +112,39 @@ $endif$
 \section*{Previous Experience}
 \noindent
 $for(experience)$
-\note{$experience.years$}\textsc{$experience.employer$}\\
-\emph{$experience.job$}\\
-$experience.city$\\[.2cm]
+\note{\textbf{$experience.years$}}\textsc{$experience.employer$}, $experience.city$\\
+\emph{$experience.job$}$if(experience.title)$, \emph{$experience.title$}$endif$\\
+\\[.2cm]
+$if(experience.achievements)$
+$for(experience.achievements)$
+$if(experience.achievements.years)$\note{$experience.achievements.years$ >}$else$\textbullet\  $endif$ $experience.achievements.details$\\[.1cm]
+$endfor$
+\\[.2cm]
+$endif$
 $endfor$
 
 $if(education)$
 \section*{Education}
 \noindent
 $for(education)$
-\note{$education.year$}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
-\emph{$education.institute$}$if(education.city)$, $education.city$$endif$\\[.2cm]
+\note{\textbf{$education.year$}}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
+\emph{$education.institute$}$if(education.city)$, $education.city$$endif$
+$if(education.mentions)$
+\begin{itemize}
+    $for(education.mentions)$
+      \item $education.mentions.name$ \emph{$education.mentions.year$}
+    $endfor$
+\end{itemize}
+$endif$
 $endfor$
+$endif$
+
+\section*{Technical Skills}
+$if(skills)$
+    $for(skills)$
+\subsection*{\textbf{$skills.section$}}
+$skills.enum$
+    $endfor$
 $endif$
 
 $if(languages)$

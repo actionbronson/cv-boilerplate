@@ -17,20 +17,24 @@ urls:
 intro: "I know my fate. One day my name will be associated with the memory of something tremendous --- a crisis without equal on earth, the most profound collision of conscience, a decision that was conjured up against everything that had been believed, demanded, hallowed so far. I am no man, I am dynamite."
 
 skills:
-- Aesthetics, Ethics, Metaphysics, Nihilism
-- Psychology, Ontology, Poetry, Value theory
-- Voluntarism, Tragedy, Fact–value distinction
-- Anti-foundationalism, Philosophy of history
+- section: Philosophy
+  enum: Aesthetics, Ethics, Metaphysics, Nihilism
 
 experience:
 - years: 1879--1889
   employer: Freiberufler
   job: Freier Philosoph
   city: Sils-Maria
+  achievements:
+    - years: 1883--1889
+      details: Pondered over my own purpose in this world. 
 - years: 1869–-1879
   employer: Universität Basel
   job: Professor für klassische Philologie
   city: Basel
+  achievements:
+    - years: 1872--1875
+      details: Sent on a special assignment to ponder over my own existence.
 - years: 1867--1868
   employer: Preußische Artillerie
   job: Kanonier
@@ -45,10 +49,13 @@ education:
   subject: Abitur
   institute: Schulpforta
   city: Naumburg
+  mentions:
+    - name: "Scholarship for outstanding thinking."
+      year: 1863
 
 # Settings
 mainfont: Hoefler Text
 fontsize: 10pt
 lang: en-GB
-geometry: a4paper, left=35mm, right=35mm, top=51mm, bottom=17mm
+geometry: a4paper, left=35mm, right=35mm, top=41mm, bottom=17mm
 ---

@@ -99,7 +99,7 @@ $endfor$
 \end{multicols}
 $endif$
 
-\vspace{30pt}
+\vspace{15pt}
 
 $if(intro)$
 $intro$
@@ -107,19 +107,27 @@ $endif$
 
 % \vfill
 
-\vspace{25pt}
+\vspace{15pt}
+
+\section*{Languages and Technologies}
+$if(skills)$
+    $for(skills)$
+\subsection*{\textbf{$skills.section$}}
+$skills.enum$
+    $endfor$
+$endif$
 
 \section*{Previous Experience}
 \noindent
 $for(experience)$
-\note{\textbf{$experience.years$}}\textsc{$experience.employer$}, $experience.city$\\
-\emph{$experience.job$}$if(experience.title)$, \emph{$experience.title$}$endif$\\
-\\[.2cm]
+\note{\textbf{$experience.years$}}\textbf{$experience.employer$}, $experience.city$\\
+\emph{$experience.job$}$if(experience.title)$, \emph{$experience.title$}$endif$
 $if(experience.achievements)$
+\begin{itemize}
 $for(experience.achievements)$
-$if(experience.achievements.years)$\note{$experience.achievements.years$ >}$else$\textbullet\  $endif$ $experience.achievements.details$\\[.1cm]
+  \item $experience.achievements$ 
 $endfor$
-\\[.2cm]
+\end{itemize}
 $endif$
 $endfor$
 
@@ -130,6 +138,7 @@ $for(education)$
 \note{\textbf{$education.year$}}\textbf{$education.subject$}$if(education.degree)$, $education.degree$$endif$\\
 \emph{$education.institute$}$if(education.city)$, $education.city$$endif$
 $if(education.mentions)$
+\noindent
 \begin{itemize}
     $for(education.mentions)$
       \item $education.mentions.name$ \emph{$education.mentions.year$}
@@ -139,19 +148,13 @@ $endif$
 $endfor$
 $endif$
 
-\section*{Technical Skills}
-$if(skills)$
-    $for(skills)$
-\subsection*{\textbf{$skills.section$}}
-$skills.enum$
-    $endfor$
-$endif$
-
-$if(languages)$
-\section*{Languages}
-$for(languages)$
-\emph{$languages.language$} ($languages.proficiency$)\\
+$if(extracurricular)$
+\section*{Volunteering}
+\begin{itemize}
+$for(extracurricular.details)$
+  \item $extracurricular.details$
 $endfor$
+\end{itemize}
 $endif$
 
 \end{document}

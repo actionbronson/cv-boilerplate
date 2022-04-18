@@ -1,1 +1,5 @@
 output.pdf
+ic/*
+manager/*
+details.manager.yaml
+details.ic.yaml
